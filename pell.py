@@ -41,9 +41,10 @@ def main():
         d = int(raw_input("Enter the desired D to solve for: "))
 
     A = []
-    a0 = int(sqrt(d))
-    #A.append(a0)
-    obtenerFraccionContinua(A, d)
+    if d >= 0:
+        a0 = int(sqrt(d))
+        #A.append(a0)
+        obtenerFraccionContinua(A, d)
 
     longCiclo = len(A)-1
     p=1
