@@ -47,6 +47,7 @@ def main():
 
     longCiclo = len(A)-1
     p=1
+    q=0
 
     if longCiclo > 0:
         if longCiclo%2 == 0:
