@@ -1,4 +1,7 @@
-from math import *
+# TODO: Maximum recursion depth exceeded with D > 100.000.000
+
+import sys
+from math import sqrt
 
 def obtenerFraccionContinua(A, x):
     a0 = int(sqrt(x))
@@ -29,7 +32,13 @@ def result(A, num, den, i, maximo):
 
 
 def main():
-    d = 13
+    print "Pell Equation"
+    print "x^2 - D*y^2 = 1"
+    print " "
+    if len(sys.argv) > 1:
+        d = int(sys.argv[1])
+    else:
+        d = int(raw_input("Enter the desired D to solve for: "))
 
     A = []
     a0 = int(sqrt(d))
@@ -46,7 +55,10 @@ def main():
             A += A[1:] +A[1:]
             p, q = result(A, A[0], A[1], 1, 2*longCiclo-1)
 
-    print str(p)
+    print "--------------------------------------------"
+    print "Fundamental solution for D = " + str(d) + ": "
+    print "x = " + str(p)
+    print "y = " + str(q)
 
 
 if __name__ == '__main__':
